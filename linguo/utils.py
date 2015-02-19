@@ -27,4 +27,8 @@ def get_current_language():
     Wrapper around `translation.get_language` that returns the normalized
     language code.
     """
-    return get_normalized_language(translation.get_language())
+    if translation.get_language() is None:
+        lan = settings.LANGUAGE_CODE
+    else:
+        lan = translation.get_language()
+    return get_normalized_language(lan)
