@@ -28,7 +28,7 @@ def get_current_language():
     language code.
     """
     if translation.get_language() is None:
-        lan = settings.LANGUAGE_CODE
+        language = settings.LANGUAGE_CODE
     else:
-        lan = translation.get_language()
-    return get_normalized_language(lan)
+        language = translation.get_language()
+    return get_normalized_language(language)
